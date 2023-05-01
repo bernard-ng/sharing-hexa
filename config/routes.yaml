@@ -1,5 +1,6 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+    resource: ../src/Infrastructure/
+    type: annotation
+    schemes:
+        - HTTP
+        - HTTPS

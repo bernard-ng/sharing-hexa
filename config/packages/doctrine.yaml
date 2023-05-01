@@ -11,11 +11,24 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            Domain\Shared\Entity:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                type: annotation
+                dir: '%kernel.project_dir%/src/Domain/Shared/Entity'
+                prefix: 'Domain\Shared\Entity'
+
+            Domain\Link\Entity:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Link/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Link\Entity'
+
+            Domain\Link\ValueObject:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Link/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Link\ValueObject'
+
 
 when@test:
     doctrine:
