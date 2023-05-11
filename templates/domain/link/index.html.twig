@@ -1,0 +1,20 @@
+{% extends 'layout/base.html.twig' %}
+{% block title "Tous les liens" %}
+
+{% block header %}
+    {% embed 'component/_header.html.twig' %}
+        {% block header_title "Tous les liens - header" %}
+        {% block header_action_list %}
+            <li>
+                <a href="{{ path('app_link_new') }}" class="btn btn-white btn-dim btn-outline-light">
+                    <span>Ajouter</span>
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {% embed 'component/_list.html.twig' with {_action: 'ajouter un lien', _path: path('app_link_new')} %}
+    {% endembed %}
+{% endblock %}
