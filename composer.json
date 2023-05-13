@@ -13,6 +13,7 @@
         "doctrine/orm": "^2.14",
         "embed/embed": "^4.4",
         "geoip2/geoip2": "^2.13",
+        "knplabs/knp-paginator-bundle": "^6.2",
         "matomo/device-detector": "^6.1",
         "mobiledetect/mobiledetectlib": "^3.74",
         "phpdocumentor/reflection-docblock": "^5.3",
@@ -46,6 +47,7 @@
         "symfony/web-link": "6.2.*",
         "symfony/yaml": "6.2.*",
         "twig/extra-bundle": "^2.12|^3.0",
+        "twig/string-extra": "^3.6",
         "twig/twig": "^2.12|^3.0"
     },
     "config": {
@@ -65,7 +67,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Fixtures\\":  "fixtures"
         }
     },
     "replace": {
@@ -99,6 +102,10 @@
         }
     },
     "require-dev": {
+        "dama/doctrine-test-bundle": "^7.2",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "hautelook/alice-bundle": "^2.12",
+        "nelmio/alice": "^3.12",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.2.*",
         "symfony/css-selector": "6.2.*",
@@ -106,6 +113,7 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "6.2.*",
-        "symfony/web-profiler-bundle": "6.2.*"
+        "symfony/web-profiler-bundle": "6.2.*",
+        "theofidry/alice-data-fixtures": "^1.6"
     }
 }

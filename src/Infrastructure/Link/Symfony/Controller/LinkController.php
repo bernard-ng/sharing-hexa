@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Infrastructure\Link\Symfony\Controller;
 
 use Domain\Link\Entity\Link;
+use Domain\Link\Repository\LinkRepositoryInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +22,21 @@ use Symfony\Component\Routing\Requirement\Requirement;
 final class LinkController extends AbstractController
 {
     #[Route('', name: 'index', methods: ['GET'])]
-    public function index(): Response
-    {
-        return $this->render('domain/link/index.html.twig');
+    public function index(
+        LinkRepositoryInterface $repository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response {
+        return $this->render(
+            view: 'domain/link/index.html.twig',
+            parameters: [
+                'data' => $paginator->paginate(
+                    target: $repository->findAll(),
+                    page: $request->query->getInt('page', 1),
+                    limit: 50
+                )
+            ]
+        );
     }
 
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]

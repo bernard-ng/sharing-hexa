@@ -1,0 +1,5 @@
+include:
+    - templates.yaml
+
+Domain\Link\Entity\Link:
+    link{1..500} (extends link):

@@ -8,6 +8,13 @@
                     {% endif %}
                 {% endblock %}
             </h3>
+            <div class="nk-block-des text-soft">
+                {% block header_description %}
+                    {% if data is defined and data.getTotalItemCount is defined and data.getTotalItemCount > 0 %}
+                        <span class="fw-bolder">{{ data.getTotalItemCount }}</span> éléments, page <span class="fw-bolder">{{ data.getCurrentPageNumber }}</span> sur {{ data.getPageCount }}
+                    {% endif %}
+                {% endblock %}
+            </div>
         </div>
         <div class="nk-block-head-content">
             <div class="toggle-wrap nk-block-tools-toggle">
