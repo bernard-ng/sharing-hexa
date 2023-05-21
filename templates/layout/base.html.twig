@@ -8,10 +8,12 @@
         <title>{% block title %}{% endblock %} | sharing hexa</title>
 
         <link rel="stylesheet" href="{{ asset('/css/dashlite.min.css') }}">
+        {{ encore_entry_script_tags('app') }}
         <script src="{{ asset('/js/bundle.js') }}"></script>
         <script src="{{ asset('/js/scripts.js') }}"></script>
     </head>
     <body class="nk-body bg-theme has-sidebar ui-shady">
+
     <div class="nk-app-root">
         <div class="nk-main">
             {% include 'component/_sidebar.html.twig' %}
@@ -23,6 +25,7 @@
                             {% block body %}
                                 <div class="nk-content-body">
                                     <div class="mx-auto">
+                                        {% include 'component/_flash.html.twig' %}
                                         {% block header %}{% endblock %}
                                         <div class="nk-block">
                                             {% block content %}{% endblock %}

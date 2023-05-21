@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Link\Repository;
 
+use Domain\Link\Entity\Link;
 use Domain\Shared\Repository\DataRepositoryInterface;
 
 /**
@@ -13,4 +14,5 @@ use Domain\Shared\Repository\DataRepositoryInterface;
  */
 interface LinkRepositoryInterface extends DataRepositoryInterface
 {
+    public function isUniqueSlug(string $slug): bool;
 }
