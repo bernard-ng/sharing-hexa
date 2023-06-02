@@ -27,6 +27,17 @@ security:
                 password_parameter: password
                 csrf_parameter: _token
 
+            logout:
+                invalidate_session: true
+                path: authentication_logout
+                target: authentication_login
+
+            remember_me:
+                secret: "%%kernel.secret%"
+                lifetime: 604800 # 1 week
+                path: /
+                samesite: strict
+
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:

@@ -35,7 +35,7 @@ final class LoginFormController extends AbstractController
     }
 
 
-    #[Route('/logout', name: 'authentication_logout', methods: ['POST'])]
+    #[Route('/logout', name: 'authentication_logout', methods: ['GET'])]
     public function logout()
     {
     }
